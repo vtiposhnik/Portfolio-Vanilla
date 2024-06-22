@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+section {
+    position: absolute;
+}
+section img {
+    width: 100%;
+}
+
+.home-slide {
+    z-index: 0;
+}
+.about-slide {
+    z-index: 10;
+}
+.contact-slide {
+    z-index: 20;
+    display: none;
+}
