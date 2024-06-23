@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 section {
@@ -9,6 +10,19 @@ section img {
     width: 100%;
 }
 
+@keyframes slide {
+    75% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.slide {
+    transition: transform 0.2s ease-in-out;
+}
 .home-slide {
     z-index: 0;
 }
@@ -17,5 +31,8 @@ section img {
 }
 .contact-slide {
     z-index: 20;
-    display: none;
+    animation: slide 2s;
+}
+button {
+    margin: 20px;
 }
