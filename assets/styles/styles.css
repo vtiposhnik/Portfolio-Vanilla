@@ -1,19 +1,52 @@
+:root {
+
+
+    /* -------------------------------- Typography ------------------------------------ */
+
+    --fsz-menu: 50px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 section {
     position: absolute;
 }
+
 section img {
     width: 100%;
 }
+
+/* ANIMATED BG */
+#canva {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#00ffee, #fbbe6e);
+}
+
+/* TEST PAGE */
 
 @keyframes slide {
     75% {
         opacity: 0.2;
     }
+
     100% {
         opacity: 0;
         display: none;
@@ -23,16 +56,35 @@ section img {
 .slide {
     transition: transform 0.2s ease-in-out;
 }
+
 .home-slide {
     z-index: 0;
 }
+
 .about-slide {
     z-index: 10;
 }
+
 .contact-slide {
     z-index: 20;
     animation: slide 2s;
 }
+
 button {
     margin: 20px;
+}
+
+/* HOME PAGE */
+
+.home {
+    .main-menu {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            font-size: var(--fsz-menu);
+            text-transform: uppercase;
+        }
+    }
 }
