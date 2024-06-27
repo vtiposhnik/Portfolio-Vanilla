@@ -1,6 +1,6 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.slider');
     let currentIndex = 0;
 
     function showSlide(index) {
@@ -26,3 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the first slide as active
     showSlide(currentIndex);
 });
+

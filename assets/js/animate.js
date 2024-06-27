@@ -28,9 +28,8 @@ class Particle {
     }
 
     draw() {
-        console.log(this.x);
         ctx.beginPath();
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = '#495464';
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fill();
     }
@@ -44,24 +43,24 @@ class Particle {
             this.directionY = -this.directionY;
         }
 
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        // mouse collision detection
-        if (distance < mouse.radius) {
-            if (mouse.y < this.y && this.y < 40) {
-                this.y -= 10;
-            }
-            if (mouse.x < this.x && this.x < canvas.width - 40) {
-                this.x += 10;
-            }
-            if (mouse.y < this.y && this.y < canvas.height - 40) {
-                this.y += 10;
-            }
-            if (mouse.x > this.x && this.x < 40) {
-                this.x -= 10;
-            }
-        }
+        // let dx = mouse.x - this.x;
+        // let dy = mouse.y - this.y;
+        // let distance = Math.sqrt(dx * dx + dy * dy);
+        // // mouse collision detection
+        // if (distance < mouse.radius) {
+        //     if (mouse.y < this.y && this.y < 40) {
+        //         this.y -= 10;
+        //     }
+        //     if (mouse.x < this.x && this.x < canvas.width - 40) {
+        //         this.x += 10;
+        //     }
+        //     if (mouse.y < this.y && this.y < canvas.height - 40) {
+        //         this.y += 10;
+        //     }
+        //     if (mouse.x > this.x && this.x < 40) {
+        //         this.x -= 10;
+        //     }
+        // }
         this.x += this.directionX;
         this.y += this.directionY;
 
@@ -74,15 +73,14 @@ class Particle {
 // initialize particles
 function init() {
     particlesArr = [];
-    console.log(window.innerWidth);
-    let numberOfParticles = 100;
+    let numberOfParticles = 150;
     for (let i = 0; i < numberOfParticles; i++) {
-        let radius = (Math.random() * 5) + 2;
+        let radius = (Math.random() * 2) + 1;
         let x = Math.random() * (window.innerWidth - radius * 2);
         let y = Math.random() * (window.innerHeight - radius * 2);
-        let directionX = (Math.random() * 3) - 1.5;
-        let directionY = (Math.random() * 3) - 1.5;
-        let color = 'white'
+        let directionX = (Math.random() * 1.1) - 0.9;
+        let directionY = (Math.random() * 1.1) - 0.9;
+        let color = '#495464'
 
         particlesArr.push(new Particle(x, y, directionX, directionY, color, radius));
     }
